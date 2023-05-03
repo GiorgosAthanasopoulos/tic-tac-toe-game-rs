@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "rust-for-ts-devs-frontend-masters"
-version = "0.1.0"
+name = "tic-tac-toe-game-rs"
+version = "1.0.0"
