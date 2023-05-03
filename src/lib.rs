@@ -192,9 +192,3 @@ impl TicTacToeGame {
         println!("Winner: {}", winner);
     }
 }
-
-fn main() {
-    let mut game = TicTacToeGame::new();
-    assert!(game.board.len() == 9);
-    game.game_loop();
-}
