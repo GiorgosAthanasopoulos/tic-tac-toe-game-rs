@@ -1,10 +1,12 @@
 use std::io;
 
-struct TicTacToeGame {
+/// Tic-Tac-Toe game implementation in rust for 2 players in the command line
+pub struct TicTacToeGame {
     board: Vec<String>,
 }
 
 impl TicTacToeGame {
+    /// Constructs a new tic-tac-toe game
     pub fn new() -> TicTacToeGame {
         let mut game = TicTacToeGame { board: vec![] };
         for i in 0..9 {
@@ -16,6 +18,7 @@ impl TicTacToeGame {
         return game;
     }
 
+    /// prints the game board to the command line
     fn print_board(&self) {
         assert!(self.board.len() == 9);
 
@@ -35,6 +38,7 @@ impl TicTacToeGame {
         }
     }
 
+    /// checks the game board for a winner
     fn check_winner(&self) -> String {
         assert!(self.board.len() == 9);
 
@@ -138,7 +142,8 @@ impl TicTacToeGame {
         }
     }
 
-    pub fn start_game(&mut self) {
+    /// Main game logic and game loop
+    pub fn game_loop(&mut self) {
         assert!(self.board.len() == 9);
 
         let mut winner = String::from("None");
@@ -191,5 +196,5 @@ impl TicTacToeGame {
 fn main() {
     let mut game = TicTacToeGame::new();
     assert!(game.board.len() == 9);
-    game.start_game();
+    game.game_loop();
 }
