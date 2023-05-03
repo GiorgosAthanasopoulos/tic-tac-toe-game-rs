@@ -1,6 +1,6 @@
 use std::io;
 
-/// Tic-Tac-Toe game implementation in rust for 2 players in the command line
+/// A simple rust cli implementation of the classic tic tac toe game for 2 players.
 pub struct TicTacToeGame {
     board: Vec<String>,
 }
