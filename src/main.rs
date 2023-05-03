@@ -10,11 +10,15 @@ impl TicTacToeGame {
         for i in 0..9 {
             game.board.push((i + 1).to_string());
         }
+
+        assert!(game.board.len() == 9);
+
         return game;
     }
 
     fn print_board(&self) {
         assert!(self.board.len() == 9);
+
         let mut counter = 0;
         for i in 0..7 {
             if i % 2 == 0 {
@@ -32,6 +36,8 @@ impl TicTacToeGame {
     }
 
     fn check_winner(&self) -> String {
+        assert!(self.board.len() == 9);
+
         let mut counter = 0;
         let mut line: String;
 
@@ -133,6 +139,8 @@ impl TicTacToeGame {
     }
 
     pub fn start_game(&mut self) {
+        assert!(self.board.len() == 9);
+
         let mut winner = String::from("None");
         let mut turn = String::from("X");
         let mut choice: usize = 0;
@@ -182,5 +190,6 @@ impl TicTacToeGame {
 
 fn main() {
     let mut game = TicTacToeGame::new();
+    assert!(game.board.len() == 9);
     game.start_game();
 }
